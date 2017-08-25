@@ -1,7 +1,7 @@
 import sys
 
 from logging import *
-
+from craps_game import *
 #from blackjack_command_line_ui_game import BlackjackCommandLineUIGame
 #from blackjack_auto_game import BlackjackAutoGame
 
@@ -42,5 +42,9 @@ if __name__=="__main__":
 			print_intructions = False
 			#game = BlackjackAutoGame(log)
 			#game.run()
-	if print_intructions == True:
-		print("Usage: craps.py [ ui|auto ] { none|severe|warning|info|fine|finer|finest }")
+		elif 'test' == sys.argv[1].lower():
+			print_intructions = False
+			for i in range(4):
+				ComeOutRoll()
+		if print_intructions == True:
+			print("Usage: craps.py [ ui|auto ] { none|severe|warning|info|fine|finer|finest }")
